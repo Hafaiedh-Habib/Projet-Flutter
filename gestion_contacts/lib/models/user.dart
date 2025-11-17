@@ -1,18 +1,16 @@
-class Contact {
+class User {
   final int? id;
   final String nom;
   final String prenom;
   final String numero;
-  final String? image;
-  final int? userId;
+  final String motDePasse;
 
-  Contact({
+  User({
     this.id,
     required this.nom,
     required this.prenom,
     required this.numero,
-    this.image,
-    this.userId,
+    required this.motDePasse,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,19 +19,17 @@ class Contact {
       'nom': nom,
       'prenom': prenom,
       'numero': numero,
-      'image': image,
-      'user_id': userId,
+      'mot_de_passe': motDePasse,
     };
   }
 
-  factory Contact.fromMap(Map<String, dynamic> map) {
-    return Contact(
+  factory User.fromMap(Map<String, dynamic> map) {
+    return User(
       id: map['id'],
       nom: map['nom'],
       prenom: map['prenom'],
       numero: map['numero'],
-      image: map['image'],
-      userId: map['user_id'],
+      motDePasse: map['mot_de_passe'],
     );
   }
 
