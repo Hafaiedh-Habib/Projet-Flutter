@@ -3,16 +3,14 @@ class Contact {
   final String nom;
   final String prenom;
   final String numero;
-  final String? image;
-  final int? userId;
+  final int userId;
 
   Contact({
     this.id,
     required this.nom,
     required this.prenom,
     required this.numero,
-    this.image,
-    this.userId,
+    required this.userId,
   });
 
   Map<String, dynamic> toMap() {
@@ -21,7 +19,6 @@ class Contact {
       'nom': nom,
       'prenom': prenom,
       'numero': numero,
-      'image': image,
       'user_id': userId,
     };
   }
@@ -32,10 +29,7 @@ class Contact {
       nom: map['nom'],
       prenom: map['prenom'],
       numero: map['numero'],
-      image: map['image'],
       userId: map['user_id'],
     );
   }
-
-  String get fullName => '$prenom $nom';
 }
