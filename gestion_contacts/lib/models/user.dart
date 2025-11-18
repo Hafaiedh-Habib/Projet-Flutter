@@ -13,16 +13,6 @@ class User {
     required this.motDePasse,
   });
 
-  Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'nom': nom,
-      'prenom': prenom,
-      'numero': numero,
-      'mot_de_passe': motDePasse,
-    };
-  }
-
   factory User.fromMap(Map<String, dynamic> map) {
     return User(
       id: map['id'],
@@ -33,5 +23,13 @@ class User {
     );
   }
 
-  String get fullName => '$prenom $nom';
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'nom': nom,
+      'prenom': prenom,
+      'numero': numero,
+      'mot_de_passe': motDePasse,
+    };
+  }
 }
